@@ -25,3 +25,10 @@ hs_err_pid*
 #idea folder
 .idea/
 *.iml
+
+#pythonProjects
+./src/InfoGathering/pythonParsing/*.txt
+./src/InfoGathering/pythonParsing/*.csv
+./src/InfoGathering/pythonParsing/venv/
+./src/InfoGathering/pythonParsing/.idea/
+./src/InfoGathering/pythonParsing/__pycache__/
