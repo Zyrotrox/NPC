@@ -1,6 +1,7 @@
 package IO.Discord;
 
 import IO.IListener;
+import jdk.nashorn.internal.runtime.Debug;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 
@@ -12,11 +13,20 @@ public class Listener implements IListener {
     public Listener(){
         this.api = new DiscordApiBuilder().setToken(this.token).login().join();
 
-        this.api.addMessageCreateListener(event -> onMessageReceived(event.getMessageContent()));
+        this.api.addMessageCreateListener(event -> event.getChannel().sendMessage(onMessageReceived(event.getMessageContent())));
     }
 
     @Override
-    public void onMessageReceived(String msg) {
+    public String onMessageReceived(String msg) {
+        String response = "";
 
+        System.out.println("MESSAGE RECIEVED! " + msg);
+
+        if(msg.equalsIgnoreCase("!ping")){
+            response = "Pong!";
+        }
+        //todo
+
+        return response;
     }
 }
