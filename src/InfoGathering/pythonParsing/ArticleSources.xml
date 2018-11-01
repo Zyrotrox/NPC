@@ -1,0 +1,24 @@
+<Sources>
+
+    <Source Id="1" Name="BuzzFeedNews" Handle="@BuzzFeedNews" url="https://www.buzzfeednews.com/" />
+    <Source Id="2" Name="WallStreetJournal" Handle="@WSJ" url="https://www.wsj.com/europe" />
+    <Source Id="3" Name="Kotaku" Handle="@Kotaku" url="https://kotaku.com/" />
+    <Source Id="4" Name="Polygon" Handle="@Polygon" url="https://www.polygon.com/" />
+    <Source Id="5" Name="CNN" Handle="@CNN" url="https://edition.cnn.com/" />
+    <Source Id="6" Name="HuffingtonPost" Handle="@HuffPost" url="https://www.huffingtonpost.com/" />
+    <Source Id="7" Name="DailyBeast" Handle="@thedailybeast" url="https://www.thedailybeast.com/" />
+    <Source Id="8" Name="TheGuardian" Handle="@guardian" url="https://www.theguardian.com/us" />
+    <Source Id="9" Name="TheWashingtonPost" Handle="@washingtonpost" url="https://www.washingtonpost.com/" />
+    <Source Id="10" Name="NPR" Handle="@NPR" url="https://www.npr.org/" />
+    <Source Id="11" Name="Vox" Handle="@voxdotcom" url="https://www.vox.com/" />
+    <Source Id="12" Name="BlackLivesMatter" Handle="@Blklivesmatter" url="https://blacklivesmatter.com/" />
+    <Source Id="13" Name="BBC" Handle="@BBCWorld" url="https://www.bbc.com/" />
+    <Source Id="14" Name="NewYorkTimes" Handle="@nytimes" url="https://www.nytimes.com/" />
+    <Source Id="15" Name="MSNBC" Handle="@MSNBC" url="https://www.msnbc.com/" />
+    <Source Id="16" Name="TheDailyDot" Handle="@dailydot" url="https://www.dailydot.com/" />
+    <Source Id="17" Name="Salon" Handle="@Salon" url="https://www.salon.com/" />
+    <Source Id="18" Name="MotherJones" Handle="@MotherJones" url="https://www.motherjones.com/" />
+    <Source Id="19" Name="Vice" Handle="@VICE" url="https://www.vice.com/en_us" />
+    <Source Id="20" Name="ABC" Handle="@ABC" url="https://abcnews.go.com/" />
+
+</Sources>
