@@ -4,7 +4,7 @@ public class Main {
 
 
     public static void main(String[] args){
-        IListener listener = new IO.Discord.Listener();
+        Bot.NPC npc = new Bot.NPC();
     }
 
 }

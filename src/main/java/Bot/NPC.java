@@ -1,5 +1,11 @@
 package Bot;
 
-public class NPC {
+import IO.IListener;
 
+public class NPC {
+    private IListener listener;
+
+    public NPC(){
+        this.listener = new IO.Discord.Listener();
+    }
 }
