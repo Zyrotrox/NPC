@@ -1,0 +1,10 @@
+<Answers>
+    <Answer id="0" str="We need more gun control!">
+        <Topic id="0"/>
+        <Topic id="1"/>
+    </Answer>
+    <Answer id="1" str="Thoughts and Prayers!">
+        <Topic id="0"/>
+        <Topic id="1"/>
+    </Answer>
+</Answers>

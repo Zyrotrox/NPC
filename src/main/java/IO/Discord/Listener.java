@@ -12,7 +12,13 @@ public class Listener implements IListener {
     public Listener(){
         this.api = new DiscordApiBuilder().setToken(this.token).login().join();
 
-        this.api.addMessageCreateListener(event -> event.getChannel().sendMessage(onMessageReceived(event.getMessageContent())));
+        this.api.addMessageCreateListener(event -> {
+            System.out.println(event.getMessage().getAuthor().getDisplayName());
+            if(!event.getMessage().getAuthor().getDisplayName().equals("Is-this-the-real-life?")){
+                event.getMessage().getChannel().sendMessage(onMessageReceived(event.getMessageContent()));
+
+            }
+        });
     }
 
     @Override

@@ -1,0 +1,28 @@
+<Topics>
+    <Topic id="0" name="Shooting">
+        <keyword value="Shooting" />
+        <keyword value="AK-45" />
+        <keyword value="Full-Automatic" />
+        <keyword value="Good guy with a gun"/>
+        <keyword value="Bad guy with a gun"/>
+        <keyword value="2nd Amendment"/>
+        <keyword value="Freedom"/>
+        <keyword value="Gun Control"/>
+        <keyword value="Gun Laws" />
+        <keyword value="Control Guns"/>
+        <keyword value="shot"/>
+        <keyword value="test1"/>
+        <keyword value="test3"/>
+    </Topic>
+    <Topic id="1" name="Murder">
+        <keyword value="killed" />
+        <keyword value="test2" />
+        <keyword value="dead" />
+        <keyword value="test3" />
+    </Topic>
+    <Topic id="4269" name="Unicorn">
+        <keyword value="fabulous" />
+        <keyword value="mystical" />
+        <keyword value="unicorn" />
+    </Topic>
+</Topics>
