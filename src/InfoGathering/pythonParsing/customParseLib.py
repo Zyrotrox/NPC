@@ -3,6 +3,10 @@ import xml.etree.ElementTree as Et
 from bs4 import BeautifulSoup
 import requests
 
+
+#the library that should do all the work
+
+
 def createPaper(xmlnode,articleNumber):
 
     paper = Paper(xmlnode.attrib['Name'], xmlnode.attrib['url'])
