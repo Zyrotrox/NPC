@@ -2,6 +2,7 @@ package Entities;
 
 import java.util.ArrayList;
 
-public class Topic {
-    private String name;
+public class Topics extends ArrayList<Topic>{
+
+
 }
