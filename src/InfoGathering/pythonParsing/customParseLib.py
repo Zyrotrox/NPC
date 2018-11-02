@@ -44,7 +44,6 @@ class Paper:
         self.articles = {}
 
     def BuzzFeedNews(self, artno):
-        print('startet the shit')
         resp = requests.get(self.url)
         html = resp.text
         soup = BeautifulSoup(html, 'lxml')
