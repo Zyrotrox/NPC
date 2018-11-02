@@ -1,6 +1,6 @@
 <Sources>
 
-    <Source Id="1" Name="BuzzFeedNews" Handle="@BuzzFeedNews" url="https://www.buzzfeednews.com/" />
+    <Source Id="1" Name="BuzzFeedNews" Handle="@BuzzFeedNews" url="https://www.buzzfeednews.com/section/politics" />
     <Source Id="2" Name="WallStreetJournal" Handle="@WSJ" url="https://www.wsj.com/europe" />
     <Source Id="3" Name="Kotaku" Handle="@Kotaku" url="https://kotaku.com/" />
     <Source Id="4" Name="Polygon" Handle="@Polygon" url="https://www.polygon.com/" />

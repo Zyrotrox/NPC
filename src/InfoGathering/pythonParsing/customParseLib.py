@@ -33,7 +33,7 @@ def createPaper(xmlnode,articleNumber):
         'ABC': paper.ABC(articleNumber)
     }
 
-    return switcher[xmlnode.attrib]
+    return switcher[xmlnode.attrib['Name']]
 
 
 class Paper:
@@ -44,11 +44,16 @@ class Paper:
         self.articles = {}
 
     def BuzzFeedNews(self, artno):
+        print('startet the shit')
         resp = requests.get(self.url)
         html = resp.text
         soup = BeautifulSoup(html, 'lxml')
 
         articles = soup.find_all('article')
+        j = 0
+        while j < artno:
+            self.articles[articles[j].h2.a.string] = articles[j].a['href']
+            j += 1
 
         return self
 
