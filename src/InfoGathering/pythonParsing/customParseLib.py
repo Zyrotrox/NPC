@@ -66,7 +66,7 @@ class Paper:
         articles = soup.find_all('h3')
 
         j = 0
-        while j < artno:
+        while j < artno and j < len(articles):
             self.articles[articles[j].a.string] = articles[j].a['href']
             j += 1
 
@@ -82,7 +82,7 @@ class Paper:
         #articles = soup.find_all('article')
 
         #j = 0
-        #while j < artno:
+        #while j < artno and j < len(articles):
         #   self.articles[articles[j].a.string] = articles[j].a['href']
         #    j += 1
 
@@ -100,58 +100,158 @@ class Paper:
         articles = soup.find_all('div', 'c-compact-river__entry')
 
         j = 0
-        while j < artno:
+        while j < artno and j < len(articles):
             self.articles[articles[j].h2.a.string] = articles[j].h2.a['href']
             j += 1
 
         return self
 
     def CNN(self, artno):
+
+
+        #not working rn. but not far off i guess.
+
+
+        if self.name != 'CNN':
+            return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all('div')
+
+        print(len(articles))
+
+        j = 0
+        while j < artno and j < len(articles):
+            print(articles[j])
+
+            j += 1
+
         return self
 
     def HuffingtonPost(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all('div', 'card__headline')
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].a.div.string] = ("https://www.huffingtonpost.com" + articles[j].a['href'])
+            j += 1
+
         return self
 
     def DailyBeast(self, artno):
+
+        if self.name != 'DailyBeast':
+            return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all('article', 'LatestCard')
+
+        print(len(articles))
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].h2.string] = articles[j].a['href']
+            j += 1
+
         return self
 
     def TheGuardian(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def TheWashingtonPost(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def NPR(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def Vox(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def BlackLivesMatter(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def BBC(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def NewYorkTimes(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def MSNBC(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def TheDailyDot(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def Salon(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def MotherJones(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def Vice(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
     def ABC(self, artno):
+
+        if self.name != 'HuffingtonPost':
+            return None
+
         return self
 
 

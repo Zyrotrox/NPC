@@ -6,7 +6,7 @@
     <Source Id="4" Name="Polygon" Handle="@Polygon" url="https://www.polygon.com/" />
     <Source Id="5" Name="CNN" Handle="@CNN" url="https://edition.cnn.com/" />
     <Source Id="6" Name="HuffingtonPost" Handle="@HuffPost" url="https://www.huffingtonpost.com/" />
-    <Source Id="7" Name="DailyBeast" Handle="@thedailybeast" url="https://www.thedailybeast.com/" />
+    <Source Id="7" Name="DailyBeast" Handle="@thedailybeast" url="https://www.thedailybeast.com/category/politics" />
     <Source Id="8" Name="TheGuardian" Handle="@guardian" url="https://www.theguardian.com/us" />
     <Source Id="9" Name="TheWashingtonPost" Handle="@washingtonpost" url="https://www.washingtonpost.com/" />
     <Source Id="10" Name="NPR" Handle="@NPR" url="https://www.npr.org/" />
