@@ -44,9 +44,9 @@ class Paper:
         self.articles = {}
 
     def BuzzFeedNews(self, artno):
-        resp = requests.get(self.url)
-        html = resp.text
-        soup = BeautifulSoup(html, 'lxml')
+        if self.name != 'BuzzFeedNews':
+            return None
+        soup = getSoup(self)
 
         articles = soup.find_all('article')
         j = 0
@@ -57,12 +57,53 @@ class Paper:
         return self
 
     def WallStreetJournal(self, artno):
+
+        if self.name != 'WallStreetJournal':
+            return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all('h3')
+
+        j = 0
+        while j < artno:
+            self.articles[articles[j].a.string] = articles[j].a['href']
+            j += 1
+
         return self
 
     def Kotaku(self, artno):
-        return self
+
+        #if self.name != 'Kotaku':
+        #    return None
+
+        #soup = getSoup(self)
+
+        #articles = soup.find_all('article')
+
+        #j = 0
+        #while j < artno:
+        #   self.articles[articles[j].a.string] = articles[j].a['href']
+        #    j += 1
+
+        # fuck kotaku for now
+
+        return None
 
     def Polygon(self, artno):
+
+        if self.name != 'Polygon':
+            return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all('div', 'c-compact-river__entry')
+
+        j = 0
+        while j < artno:
+            self.articles[articles[j].h2.a.string] = articles[j].h2.a['href']
+            j += 1
+
         return self
 
     def CNN(self, artno):
@@ -113,4 +154,10 @@ class Paper:
     def ABC(self, artno):
         return self
 
+
+def getSoup(paper):
+    resp = requests.get(paper.url)
+    html = resp.text
+    soup = BeautifulSoup(html, 'lxml')
+    return soup
 

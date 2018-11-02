@@ -12,7 +12,7 @@ articleFile = open('./Articles.csv', 'w')
 
 
 for child in root:
-    if child.attrib['Name'] == 'BuzzFeedNews':   #to just test specific newssites
+    if child.attrib['Name'] == 'Polygon':   #to just test specific newssites
         paper = Pars.createPaper(child, articleNumber)
         for data in paper.articles:
             articleFile.write(child.attrib['Name'] + "," + data.replace("\n", '') + "," + paper.articles[data] + "\n")
