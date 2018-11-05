@@ -258,6 +258,8 @@ class Paper:
 def getSoup(paper):
     resp = requests.get(paper.url)
     html = resp.text
-    soup = BeautifulSoup(html, 'lxml')
+    soup = liquify(html);
     return soup
 
+def liquify(html):
+	return BeautifulSoup(html,'lxml') #this function is completly useless but i like this name better xD
