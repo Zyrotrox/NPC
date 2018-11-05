@@ -214,15 +214,38 @@ class Paper:
 
     def BlackLivesMatter(self, artno):
 
-        if self.name != 'HuffingtonPost':
+        #can't test this  :/
+
+        if self.name != 'BlackLivesMatter':
             return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all("div", "col-sm-4")
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].h3.a.string] = articles[j].h3.a['href']
+            j += 1
 
         return self
 
     def BBC(self, artno):
 
-        if self.name != 'HuffingtonPost':
+        #still at uni :/ btw, why the fuck do i feel the need to comment this shit
+        #i literally have not a single useful comment in this code -.-
+
+        if self.name != 'BBC':
             return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all("h3")
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].string] = articles[j].parent['href']
+            j += 1
 
         return self
 
@@ -242,8 +265,19 @@ class Paper:
 
     def TheDailyDot(self, artno):
 
-        if self.name != 'HuffingtonPost':
+        #these comments get kinda boring now
+
+        if self.name != 'TheDailyDot':
             return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all("a", "dd-card-headline")
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].string] = articles[j]['href']
+            j += 1
 
         return self
 
