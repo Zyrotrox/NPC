@@ -283,15 +283,29 @@ class Paper:
 
     def Salon(self, artno):
 
-        if self.name != 'HuffingtonPost':
+        if self.name != 'Salon':
             return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all("div", "card-article")
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].a.h2.string] = articles[j].a['href']
+            j += 1
 
         return self
 
     def MotherJones(self, artno):
 
-        if self.name != 'HuffingtonPost':
+        if self.name != 'MotherJones':
             return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all("ul", "article-list").find_all("li") #would work if the top article hadn't another format
+                                                                      #you will find a way mongoloid
 
         return self
 

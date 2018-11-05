@@ -10,7 +10,7 @@ articleNumber = 20
 tree = Et.parse('G:\gitnpc\src\InfoGathering\pythonParsing\ArticleSources.xml')
 root = tree.getroot()
 
-testList = ['BuzzFeedNews', 'WallStreetJournal', 'Polygon', 'HuffingtonPost', 'DailyBeast', 'TheGuardian', 'BBC', 'BlackLivesMatter', 'TheDailyDot']
+testList = ['BuzzFeedNews', 'WallStreetJournal', 'Polygon', 'HuffingtonPost', 'DailyBeast', 'TheGuardian', 'BBC', 'BlackLivesMatter', 'TheDailyDot', 'Salon']
 
 articleFile = open('./Articles.csv', 'w')
 
