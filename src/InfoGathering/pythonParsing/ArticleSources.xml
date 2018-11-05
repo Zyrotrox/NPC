@@ -10,7 +10,7 @@
     <Source Id="8" Name="TheGuardian" Handle="@guardian" url="https://www.theguardian.com/us" />
     <Source Id="9" Name="TheWashingtonPost" Handle="@washingtonpost" url="https://www.washingtonpost.com/" />
     <Source Id="10" Name="NPR" Handle="@NPR" url="https://www.npr.org/" />
-    <Source Id="11" Name="Vox" Handle="@voxdotcom" url="https://www.vox.com/" />
+    <Source Id="11" Name="Vox" Handle="@voxdotcom" url="https://www.vox.com/policy-and-politics" />
     <Source Id="12" Name="BlackLivesMatter" Handle="@Blklivesmatter" url="https://blacklivesmatter.com/" />
     <Source Id="13" Name="BBC" Handle="@BBCWorld" url="https://www.bbc.com/" />
     <Source Id="14" Name="NewYorkTimes" Handle="@nytimes" url="https://www.nytimes.com/" />

@@ -154,7 +154,6 @@ class Paper:
 
         articles = soup.find_all('article', 'LatestCard')
 
-        print(len(articles))
 
         j = 0
         while j < artno and j < len(articles):
@@ -165,8 +164,19 @@ class Paper:
 
     def TheGuardian(self, artno):
 
-        if self.name != 'HuffingtonPost':
+        #should work but i can't test it on the uni servers :/
+
+        if self.name != 'TheGuardian':
             return None
+
+        soup = getSoup(self)
+
+        articles = soup.select(".fc-item__title")
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].a.select(".js-headline-text").string] = articles[j].a['href']
+            j += 1
 
         return self
 
@@ -186,8 +196,19 @@ class Paper:
 
     def Vox(self, artno):
 
-        if self.name != 'HuffingtonPost':
+        #same thing as guardian. stupid uni
+
+        if self.name != 'Vox':
             return None
+
+        soup = getSoup(self)
+
+        articles = soup.find_all("div", "c-compact-river__entry")
+
+        j = 0
+        while j < artno and j < len(articles):
+            self.articles[articles[j].h2.a.string] = articles[j].h2.a['href']
+            j += 1
 
         return self
 
