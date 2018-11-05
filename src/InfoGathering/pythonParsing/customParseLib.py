@@ -155,6 +155,7 @@ class Paper:
         articles = soup.find_all('article', 'LatestCard')
 
 
+
         j = 0
         while j < artno and j < len(articles):
             self.articles[articles[j].h2.string] = articles[j].a['href']
@@ -164,19 +165,8 @@ class Paper:
 
     def TheGuardian(self, artno):
 
-        #should work but i can't test it on the uni servers :/
-
         if self.name != 'TheGuardian':
             return None
-
-        soup = getSoup(self)
-
-        articles = soup.select(".fc-item__title")
-
-        j = 0
-        while j < artno and j < len(articles):
-            self.articles[articles[j].a.select(".js-headline-text").string] = articles[j].a['href']
-            j += 1
 
         return self
 
@@ -189,63 +179,51 @@ class Paper:
 
     def NPR(self, artno):
 
-        if self.name != 'HuffingtonPost':
-            return None
-
-        return self
-
-    def Vox(self, artno):
-
-        #same thing as guardian. stupid uni
-
-        if self.name != 'Vox':
+        if self.name != 'NPR':
             return None
 
         soup = getSoup(self)
 
-        articles = soup.find_all("div", "c-compact-river__entry")
+        articles = []
+        helpTag = soup.body
+
+        while helpTag != None:
+            print(helpTag)
+            if self.articles.__len__() != 0:
+                if 'class' in helpTag.articles.keys():
+                    if helpTag.attrs['class'] == "item-info":
+                        articles.append(helpTag)
+
+            helpTag = helpTag.next_element
+
+        print(len(articles))
 
         j = 0
         while j < artno and j < len(articles):
+            print(j)
             self.articles[articles[j].h2.a.string] = articles[j].h2.a['href']
             j += 1
 
         return self
 
-    def BlackLivesMatter(self, artno):
+    def Vox(self, artno):
 
-        #can't test this  :/
-
-        if self.name != 'BlackLivesMatter':
+        if self.name != 'HuffingtonPost':
             return None
 
-        soup = getSoup(self)
+        return self
 
-        articles = soup.find_all("div", "col-sm-4")
+    def BlackLivesMatter(self, artno):
 
-        j = 0
-        while j < artno and j < len(articles):
-            self.articles[articles[j].h3.a.string] = articles[j].h3.a['href']
-            j += 1
+        if self.name != 'HuffingtonPost':
+            return None
 
         return self
 
     def BBC(self, artno):
 
-        #still at uni :/ btw, why the fuck do i feel the need to comment this shit
-        #i literally have not a single useful comment in this code -.-
-
-        if self.name != 'BBC':
+        if self.name != 'HuffingtonPost':
             return None
-
-        soup = getSoup(self)
-
-        articles = soup.find_all("h3")
-
-        j = 0
-        while j < artno and j < len(articles):
-            self.articles[articles[j].string] = articles[j].parent['href']
-            j += 1
 
         return self
 
@@ -265,47 +243,22 @@ class Paper:
 
     def TheDailyDot(self, artno):
 
-        #these comments get kinda boring now
-
-        if self.name != 'TheDailyDot':
+        if self.name != 'HuffingtonPost':
             return None
-
-        soup = getSoup(self)
-
-        articles = soup.find_all("a", "dd-card-headline")
-
-        j = 0
-        while j < artno and j < len(articles):
-            self.articles[articles[j].string] = articles[j]['href']
-            j += 1
 
         return self
 
     def Salon(self, artno):
 
-        if self.name != 'Salon':
+        if self.name != 'HuffingtonPost':
             return None
-
-        soup = getSoup(self)
-
-        articles = soup.find_all("div", "card-article")
-
-        j = 0
-        while j < artno and j < len(articles):
-            self.articles[articles[j].a.h2.string] = articles[j].a['href']
-            j += 1
 
         return self
 
     def MotherJones(self, artno):
 
-        if self.name != 'MotherJones':
+        if self.name != 'HuffingtonPost':
             return None
-
-        soup = getSoup(self)
-
-        articles = soup.find_all("ul", "article-list").find_all("li") #would work if the top article hadn't another format
-                                                                      #you will find a way mongoloid
 
         return self
 
@@ -327,8 +280,6 @@ class Paper:
 def getSoup(paper):
     resp = requests.get(paper.url)
     html = resp.text
-    soup = liquify(html);
+    soup = BeautifulSoup(html, 'lxml')
     return soup
 
-def liquify(html):
-	return BeautifulSoup(html,'lxml') #this function is completly useless but i like this name better xD

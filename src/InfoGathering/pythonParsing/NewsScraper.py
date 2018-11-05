@@ -3,14 +3,14 @@ import customParseLib as Pars
 
 #the final script which the javaapp executes
 
-#toDo: CNN, Kotaku,WashingtonPost, NPR, NY Times, MSNBC
+#toDo: CNN, Kotaku, Guardian
 
 articleNumber = 20
 
 tree = Et.parse('G:\gitnpc\src\InfoGathering\pythonParsing\ArticleSources.xml')
 root = tree.getroot()
 
-testList = ['BuzzFeedNews', 'WallStreetJournal', 'Polygon', 'HuffingtonPost', 'DailyBeast', 'TheGuardian', 'BBC', 'BlackLivesMatter', 'TheDailyDot', 'Salon']
+testList = ['BuzzFeedNews', 'WallStreetJournal', 'Polygon', 'HuffingtonPost', 'DailyBeast', 'NPR']
 
 articleFile = open('./Articles.csv', 'w')
 
