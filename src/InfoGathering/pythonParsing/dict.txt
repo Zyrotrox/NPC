@@ -1,0 +1,80 @@
+def BuzzFeedNews(self):
+
+	return self
+
+def WallStreetJournal(self):
+
+	return self
+
+def Kotaku(self):
+
+	return self
+
+def Polygon(self):
+
+	return self
+
+def CNN(self):
+
+	return self
+
+def HuffingtonPost(self):
+
+	return self
+
+def DailyBeast(self):
+
+	return self
+
+def TheGuardian(self):
+
+	return self
+
+def TheWashingtonPost(self):
+
+	return self
+
+def NPR(self):
+
+	return self
+
+def Vox(self):
+
+	return self
+
+def BlackLivesMatter(self):
+
+	return self
+
+def BBC(self):
+
+	return self
+
+def NewYorkTimes(self):
+
+	return self
+
+def MSNBC(self):
+
+	return self
+
+def TheDailyDot(self):
+
+	return self
+
+def Salon(self):
+
+	return self
+
+def MotherJones(self):
+
+	return self
+
+def Vice(self):
+
+	return self
+
+def ABC(self):
+
+	return self
+
